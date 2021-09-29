@@ -49,6 +49,12 @@
     setTimeout(() => {
       window.location.href = '//github.com/master-of-forums/master-of-forums';
     }, 10 * 1000);
+    window.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+    }, false);
+    window.addEventListener('keydown', (event) => {
+      event.preventDefault();
+    }, false);
   </script>
 </body>
 
