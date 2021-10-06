@@ -109,7 +109,9 @@
 
     .char-half::before {
       position: absolute;
+      left: 0;
       width: 50%;
+      direction: ltr;
       overflow: hidden;
       content: attr(data-content);
     }
@@ -177,7 +179,7 @@
     }, false);
     const PATH = window.location.hostname.split('.');
     setTimeout(() => {
-      window.location.href = `//${PATH[1]}.com/${PATH[0]}/${PATH[0]}`;
+      window.location.replace(`//${PATH[1]}.com/${PATH[0]}/${PATH[0]}`);
     }, 9 * 1000);
   </script>
 </body>
