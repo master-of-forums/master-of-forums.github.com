@@ -9,11 +9,10 @@
   <style>
     body {
       display: flex;
-      flex-direction: column;
       width: 100%;
       height: 100vh;
       margin: 0;
-      overflow: hidden;
+      overflow: hidden !important;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei New", "Microsoft YaHei", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       color: #333;
       touch-action: none;
@@ -22,49 +21,164 @@
     }
 
     main {
-      flex: 1;
+      margin: auto;
+    }
+
+    main .logo {
+      width: 4rem;
+      height: 4rem;
+      margin: 0 auto;
+      background-image: url(//cdn.jsdelivr.net/gh/master-of-forums/master-of-forums/public/images/bull.webp);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 4rem 4rem;
+      animation: logo 4s;
+    }
+
+    main .logo:hover {
+      filter: drop-shadow(0 0 0.5rem #fff);
+    }
+
+    main .content {
+      font-size: 2rem;
+    }
+
+    main .bull {
+      color: #808080;
+      animation: bull 4s infinite;
+    }
+
+    @keyframes logo {
+      0% {
+        filter: grayscale(100%);
+        opacity: 0;
+      }
+
+      50% {
+        filter: grayscale(100%);
+        opacity: 1;
+      }
+
+      100% {
+        filter: none;
+      }
+    }
+
+    @keyframes bull {
+      0% {
+        color: transparent;
+      }
+
+      20% {
+        color: #f25022;
+      }
+
+      40% {
+        color: #7fba00;
+      }
+
+      60% {
+        color: #00a4ef;
+      }
+
+      80% {
+        color: #ffb900;
+      }
+
+      100% {
+        color: #fff;
+      }
     }
 
     @keyframes typing {
       from {
         width: 0;
       }
+
+      to {
+        width: 50%;
+      }
     }
 
-    h1 {
-      text-align: center;
+    /* Char Half */
+    .char-half {
+      position: relative;
+      display: inline-block;
+      color: transparent;
     }
 
-    h3 {
-      width: 100%;
+    .char-half::before {
+      position: absolute;
+      width: 50%;
       overflow: hidden;
-      color: #333;
-      text-align: center;
-      white-space: nowrap;
-      animation: typing 10s;
+      content: attr(data-content);
     }
 
-    h3:hover {
-      color: #f33;
+    .char-half::after {
+      position: absolute;
+      left: 50%;
+      direction: rtl;
+      width: 50%;
+      overflow: hidden;
+      content: attr(data-content);
+    }
+
+    .char-half.char-a::before {
+      color: #f25022;
+    }
+
+    .char-half.char-a::after {
+      color: #7fba00;
+    }
+
+    .char-half.char-b::before {
+      color: #00a4ef;
+    }
+
+    .char-half.char-b::after {
+      color: #ffb900;
+    }
+
+    .char-half.char-c::before {
+      color: #ffb900;
+    }
+
+    .char-half.char-c::after {
+      color: #00a4ef;
+    }
+
+    .char-half.char-d::before {
+      color: #7fba00;
+    }
+
+    .char-half.char-d::after {
+      color: #f25022;
     }
   </style>
 </head>
 
 <body>
   <main>
-    <h1>论坛大师</h1>
-    <h3>论坛网站页面美化、广告移除、功能增强。美轮美奂的视觉享受，安然恬静的论坛时光……</h3>
+    <div class="logo"></div>
+    <div class="content">
+      <span class="char-half char-a" data-content="论">论</span>
+      <span class="char-half char-b" data-content="坛">坛</span>
+      <span class="bull">&bull;</span>
+      <span class="char-half char-c" data-content="大">大</span>
+      <span class="char-half char-d" data-content="师">师</span>
+    </div>
   </main>
   <script>
-    setTimeout(() => {
-      window.location.href = '//github.com/master-of-forums/master-of-forums';
-    }, 10 * 1000);
     window.addEventListener('contextmenu', (event) => {
       event.preventDefault();
     }, false);
     window.addEventListener('keydown', (event) => {
       event.preventDefault();
     }, false);
+    const PATH = window.location.hostname.split('.');
+    setTimeout(() => {
+      window.location.href = `//${PATH[1]}.com/${PATH[0]}/${PATH[0]}`;
+    }, 9 * 1000);
   </script>
 </body>
 
