@@ -44,9 +44,8 @@
     }
 
     main .bull {
-      display: inline-block;
       color: #808080;
-      animation: bull 2s infinite;
+      animation: bull 4s infinite;
     }
 
     @keyframes logo {
@@ -67,39 +66,27 @@
 
     @keyframes bull {
       0% {
-        color: #808080;
-        opacity: 1.0;
-        transform: scale3d(1, 1, 1);
+        color: transparent;
       }
 
       20% {
         color: #f25022;
-        opacity: 0.8;
-        transform: scale3d(2, 2, 2);
       }
 
       40% {
         color: #7fba00;
-        opacity: 0.6;
-        transform: scale3d(3, 3, 3);
       }
 
       60% {
         color: #00a4ef;
-        opacity: 0.4;
-        transform: scale3d(4, 4, 4);
       }
 
       80% {
         color: #ffb900;
-        opacity: 0.2;
-        transform: scale3d(5, 5, 5);
       }
 
       100% {
         color: #fff;
-        opacity: 0;
-        transform: scale3d(6, 6, 6);
       }
     }
 
