@@ -32,8 +32,6 @@
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 4rem 4rem;
-      filter: drop-shadow(0 0 0.5rem #fff);
-      animation: logo 4s;
     }
 
     main .logo:hover {
@@ -46,57 +44,6 @@
 
     main .bull {
       animation: bull 4s infinite;
-    }
-
-    @keyframes logo {
-      0% {
-        filter: grayscale(100%);
-      }
-
-      50% {
-        filter: grayscale(100%);
-      }
-
-      100% {
-        filter: none;
-      }
-    }
-
-    @keyframes bull {
-      0% {
-        color: #f25022;
-        filter: drop-shadow(0 0 0.5rem #f25022);
-      }
-
-      33% {
-        color: #7fba00;
-        filter: drop-shadow(0 0 0.5rem #7fba00);
-      }
-
-      66% {
-        color: #00a4ef;
-        filter: drop-shadow(0 0 0.5rem #00a4ef);
-      }
-
-      99% {
-        color: #ffb900;
-        filter: drop-shadow(0 0 0.5rem #ffb900);
-      }
-
-      100% {
-        color: #fff;
-        filter: drop-shadow(0 0 0.5rem #fff);
-      }
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 50%;
-      }
     }
 
     /* Char Half */
@@ -179,7 +126,7 @@
     const PATH = window.location.hostname.split('.');
     setTimeout(() => {
       window.location.replace(`//${PATH[1]}.com/${PATH[0]}/${PATH[0]}`);
-    }, 9 * 1000);
+    }, 3 * 1000);
   </script>
 </body>
 
